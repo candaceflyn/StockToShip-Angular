@@ -1,0 +1,95 @@
+<!-- inventory-requisition.component.html -->
+
+<header>
+    <h1>Stock Vault</h1>
+    <!--<a href="#notification">Notification</a>
+    <a href="#profile">Profile</a>
+    <a href="Homepg.html"><i class="fa-solid fa-house"></i></a>-->
+</header>
+
+<div id="createBomContainer">
+
+    <h2><i class="fa-solid fa-cart-plus"></i> Inventory Requisition<button type="button" id="addItemButton"
+            (click)="addItemToIR()">
+            <i class="fa-regular fa-square-plus fa-xl"></i> Add more items to IR
+        </button></h2>
+
+    <form>
+        <p>Enter the following details to raise IR</p>
+        <div class="row">
+            <div class="col">
+                <label for="description">Requisitioner Department</label>
+                <input type="text" id="description" placeholder="Enter Department" required>
+                <span class="error-message" id="descriptionError"></span>
+            </div>
+            <div class="col">
+                <label for="unitsOfMeasure">Date of Requisition</label>
+                <input type="date" id="manufacturer" placeholder="Enter Date" required>
+                <span class="error-message" id="unitsOfMeasureError"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="uniqueItemCode">Unique Item code</label>
+                <input type="text" id="uniqueItemCode" placeholder="Enter Unique Item code" required>
+                <span class="error-message" id="uniqueItemCodeError"></span>
+            </div>
+            <div class="col">
+                <label for="manufacturer">Item Description</label>
+                <input type="text" id="manufacturer" placeholder="Enter Description" required>
+                <span class="error-message" id="manufacturerError"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="quantity">Quantity</label>
+                <input type="text" id="quantity" placeholder="Enter Quantity" required>
+                <span class="error-message" id="quantityError"></span>
+            </div>
+            <div class="col">
+                <label for="supplierCode">Unit of Measure</label>
+                <select id="unitsOfMeasure" required>
+                    <option value="mm">Meter (m)</option>
+                    <option value="km">Kilometer (km)</option>
+                    <option value="cm">Centimeter (cm)</option>
+                    <option value="mm">Millimeter (mm)</option>
+                </select>
+                <span class="error-message" id="unitsOfMeasure"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="Purpose">Purpose of Requisitions</label>
+                <input type="text" id="description" placeholder="Enter Purpose" required>
+                <span class="error-message" id="Purposeerror"></span>
+            </div>
+            <div class="col">
+                <label for="dimensions">Material Required Date</label>
+                <input type="date" id="dimensions" placeholder="Enter Date" required>
+                <span class="error-message" id="dimensionsError"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="subAssembly">Delivery Department</label>
+                <input type="text" id="subAssembly" placeholder="Enter Department" required>
+                <span class="error-message" id="subAssemblyError"></span>
+            </div>
+            <div class="col">
+                <label for="notesComments">Notes/Comments</label>
+                <input type="text" id="notesComments" placeholder="Enter Notes/Comments" required>
+                <span class="error-message" id="notesCommentsError"></span>
+            </div>
+        </div>
+
+        <div id="generateBomContainer">
+            <button type="button" (click)="saveItemCode()">SAVE</button>
+            <h3>
+              <div *ngIf="successMessage" id="successMessage">
+                {{ successMessage }}
+              </div>
+            </h3>
+          </div>
+    </form>
+</div>

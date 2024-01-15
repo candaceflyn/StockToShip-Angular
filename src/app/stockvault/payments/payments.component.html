@@ -1,0 +1,27 @@
+<div class="header-below">
+    <h2>Invoices and Payments</h2>
+</div>
+<div class="input-box">
+    <input type="text" class="box1" id="box1" placeholder="Enter PO Number" required>
+    <input type="text" class="box2" id="box2" required><br><br>
+    <input type="text" class="box3" id="box3" placeholder="Enter Department" required>
+    <input type="text" class="box4" id="box4" required>
+</div>
+<div class="image"></div>
+<div class="text-label">
+    <label id="invoice1" class="invoice1">Invoice 1</label>
+    <label id="invoice2" class="invoice2">Invoice 2</label>
+</div>
+<div class="submittion-box1">
+    <button class="approve">Approve</button>
+    <button class="reject">Reject</button>
+</div>
+<div class="submit-btn">
+    <button type="submit" class="submit-bt" onclick="pendingPayment()">Submit</button>
+</div>
+
+<script>
+    function pendingPayment(){
+        window.location.href = "pendingPayment.html";
+    }
+</script>

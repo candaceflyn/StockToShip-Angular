@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+  margin-bottom: 0;
+  color: black;
+  padding: 1em;
+
+  text-align: center;
+
+  width: 100%;
+
+}
+
+section {
+  width: 100%;
+  /*  
+    padding: 2em; */
+
+  text-align: center;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+.button-container {
+  align-items: center;
+  padding: 1em;
+}
+
+.button {
+  background-color: #001219;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #bc6c25;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-section {
+  flex: 1;
+  padding: 1em;
+}
+
+.options {
+  margin-top: 1em;
+  color: #001219;
+}
+
+.options #div2 {
+  top: 100px;
+}
+
+.table-container {
+  margin-top: 0;
+  flex: 2;
+  overflow: auto;
+  padding: 1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 0.5em;
+}
+
+th {
+  background-color: #001219;
+  color: #fefae0;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  margin-top: 0.5em;
+}

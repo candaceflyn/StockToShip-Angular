@@ -1,0 +1,69 @@
+
+
+
+<div class="text-center" >
+    <h1>Stock Vault - Item Code <a routerLink="/home"><i class="fa-solid fa-house"></i></a></h1>
+
+    <h2>Create Item Code</h2>
+    <p>Enter the following details to create Item code:</p>
+</div>
+<div class="container my-5" style="width: 28rem;">
+
+<div class="form-container">
+   
+    <form (ngSubmit)="submitForm()" #itemTypeForm="ngForm" class="p-3 bg-light shadow-sm rounded">
+        <div class="mb-3">
+            <label for="itemCode" class="form-label">Item Code:</label>
+            <input type="text" id="itemCode" name="itemCode" [(ngModel)]="itemType.itemCode"
+                [ngClass]="{ 'error-border': errorMessages.itemCode !== '' }" class="form-control" required>
+            <div class="error-message" *ngIf="errorMessages.itemCode !== ''">{{ errorMessages.itemCode }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <input type="text" id="description" name="description" [(ngModel)]="itemType.description"
+                [ngClass]="{ 'error-border': errorMessages.description !== '' }" class="form-control" required>
+            <div class="error-message" *ngIf="errorMessages.description !== ''">{{ errorMessages.description }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="unitOfMeasure" class="form-label">Units Of Measure:</label>
+            <input type="text" id="unitOfMeasure" name="unitOfMeasure" [(ngModel)]="itemType.unitOfMeasure"
+                [ngClass]="{ 'error-border': errorMessages.unitOfMeasure !== '' }" class="form-control" required>
+            <div class="error-message" *ngIf="errorMessages.unitOfMeasure !== ''">{{ errorMessages.unitOfMeasure }}</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category:</label>
+            <input type="text" id="category" name="category" [(ngModel)]="itemType.category"
+                [ngClass]="{ 'error-border': errorMessages.category !== '' }" class="form-control" required>
+            <div class="error-message" *ngIf="errorMessages.category !== ''">{{ errorMessages.category }}</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="dimensions" class="form-label">Dimensions:</label>
+            <input type="text" id="dimensions" name="dimensions" [(ngModel)]="itemType.dimensions"
+                [ngClass]="{ 'error-border': errorMessages.dimensions !== '' }" class="form-control" required>
+            <div class="error-message" *ngIf="errorMessages.dimensions !== ''">{{ errorMessages.dimensions }}</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="manufacturer" class="form-label">Manufacturer:</label>
+            <input type="text" id="manufacturer" name="manufacturer" [(ngModel)]="itemType.manufacturer"
+                [ngClass]="{ 'error-border': errorMessages.manufacturer !== '' }" class="form-control" required>
+            <div class="error-message" *ngIf="errorMessages.manufacturer !== ''">{{ errorMessages.manufacturer }}</div>
+        </div>
+        <div class="mb-3">
+            <label for="countryOrigin" class="form-label">Country Origin:</label>
+            <input type="text" id="countryOrigin" name="countryOrigin" [(ngModel)]="itemType.countryOrigin"
+                [ngClass]="{ 'error-border': errorMessages.countryOrigin !== '' }" class="form-control" required>
+            <div class="error-message" *ngIf="errorMessages.countryOrigin !== ''">{{ errorMessages.countryOrigin }}</div>
+        </div>
+
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        
+    </form>
+
+</div>
+</div>

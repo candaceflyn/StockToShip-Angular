@@ -1,0 +1,31 @@
+<h2 class="logo text-center">Stock-to-Ship <i class="fa-solid fa-shop"></i></h2>
+
+<div class="container my-5" style="width: 400px;">
+  <h1 class="text-center">Login</h1>
+
+  <form (ngSubmit)="login()" #signupForm="ngForm" class="p-3 bg-light shadow-sm rounded">
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="user.username"
+        [ngClass]="{ 'error-border': errorMessages.username !== '' }" class="form-control" required>
+      <div class="error-message" *ngIf="errorMessages.username !== ''">{{ errorMessages.username }}</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password"
+        [ngClass]="{ 'error-border': errorMessages.password !== '' }" class="form-control" required>
+      <div class="error-message" *ngIf="errorMessages.password !== ''">{{ errorMessages.password }}</div>
+    </div>
+
+    <div class="text-center"> 
+      <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+<br>
+    <div class="mb-3 text-center">
+      <a routerLink="/signup">Don't have an account? Sign Up!!</a>
+    </div>
+    </form>
+    
+</div>

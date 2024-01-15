@@ -1,0 +1,40 @@
+<app-home></app-home>
+<header>
+    <h1>Warehouse Quality Control - Painting</h1>
+    <h2>Painting Inspection Form</h2>
+  </header>
+  
+  <section>
+    <form *ngIf="!submitted" #paintingInspectionForm="ngForm" (ngSubmit)="performPaintingInspection()">
+      <label for="productCode">Product Code:</label>
+      <input type="text" id="productCode" name="productCode" required [(ngModel)]="productCode">
+  
+      <label for="paintingDate">Painting Date:</label>
+      <input type="date" id="paintingDate" name="paintingDate" required [(ngModel)]="paintingDate">
+  
+      <label for="paintColor">Paint Color:</label>
+      <input type="text" id="paintColor" name="paintColor" required [(ngModel)]="paintColor">
+  
+      <label for="adhesion">Adhesion:</label>
+      <select id="adhesion" name="adhesion" required [(ngModel)]="adhesion">
+        <option value="" disabled selected>Select adhesion</option>
+        <option value="Excellent">Excellent</option>
+        <option value="Good">Good</option>
+        <option value="Fair">Fair</option>
+        <option value="Poor">Poor</option>
+      </select>
+  
+      <button type="submit">Submit Inspection</button>
+    </form>
+  
+    <div id="inspectionResults" *ngIf="submitted">
+      <h3>Inspection Results</h3>
+      <p><strong>Product Code:</strong> {{ productCode }}</p>
+      <p><strong>Painting Date:</strong> {{ paintingDate }}</p>
+      <p><strong>Paint Color:</strong> {{ paintColor }}</p>
+      <p><strong>Adhesion:</strong> {{ adhesion }}</p>
+      <p><strong>Inspection Status:</strong> Pass</p>
+      <!-- Additional inspection details can be added here -->
+    </div>
+  </section>
+  

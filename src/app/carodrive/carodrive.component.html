@@ -1,0 +1,28 @@
+<app-home></app-home>
+<header>
+    <h3>Quality Control Check</h3>
+   <!--<a routerLink="/home"><i class="fa-solid fa-house"></i></a>-->
+  </header>
+  
+  <section>
+    <select (change)="showDetails($event)">
+      <option value="" disabled selected>Select stage</option>
+      <option value="stamping">Stamping</option>
+      <option value="blanking">Blanking</option>
+      <option value="welding">Welding</option>
+      <option value="painting">Painting</option>
+      <option value="assembling">Assembling</option>
+    </select>
+    <div id="stageDetails"></div>
+    <img src="/assets/images/QualityCheck.png" alt="QualityCheck">
+      <!--
+    <div> 
+      <a routerLink="/stamping">Go to Stamping</a>
+      <a routerLink="/blanking">Go to Blanking</a>
+      <a routerLink="/welding">Go to Welding</a>
+      <a routerLink="/painting">Go to Painting</a>
+      <a routerLink="/assembling">Go to Assembling</a>
+    </div>-->
+  </section>
+
+  

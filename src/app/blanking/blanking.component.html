@@ -1,0 +1,75 @@
+<app-home></app-home>
+<header>
+    <h1>Quality Control</h1>
+    <h2>Blanking</h2>
+  </header>
+  <section>
+    <div class="form-container">
+      <div class="left-section">
+        <div class="options">
+          <div>1. Enter the sample Size</div>
+          <input type="text" placeholder="Enter Sample Size" [(ngModel)]="sampleSize">
+          <div id="div2">2. Enter/Scan the part code</div>
+          <input type="text" placeholder="Enter/Scan Part Code" [(ngModel)]="partCode">
+        </div>
+        <div class="button-container">
+          <button class="button" (click)="edit()">Edit</button>
+          <button class="button" (click)="save()">Save</button>
+          <button class="button" (click)="submitForm()">Submit</button>
+        </div>
+      </div>
+      <div class="table-container">
+        <table>
+            <tr>
+                <th>Parameters</th>
+                <th>Sample 1</th>
+                <th>Sample 2</th>
+                <th>Sample 3</th>
+              </tr>
+              <tr>
+                <td>Sheet Metal Thickness</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>Lubrication condition</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>Sheet Metal strength</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>Tool geometry - Die</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>Tool geometry - Punch</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>Punch pressure</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>Punch speed</td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+                <td><input type="text" /></td>
+              </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+  

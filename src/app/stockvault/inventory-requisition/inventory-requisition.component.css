@@ -1,0 +1,173 @@
+body {
+    font-family: georgia, serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #edafb8, #f7e1d7, #dedbd2, #cbc0d3, #8e9aaf);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #060000;
+    height: 200h;
+    overflow-x: hidden;
+}
+
+header {
+color: black;
+padding: 1em;
+text-align: center;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+header h1{
+position: relative;
+left: -9em;
+}
+header a{
+margin-left: 50px;
+color: wheat;
+}
+
+#createBomContainer {
+    margin: 20px;
+    text-align: center;
+    height: calc(100% - 20px);
+    /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+input,
+select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 100px;
+}
+
+#addItemButton {
+    background-color: #4a5759;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+h2 i{
+    margin: 10px;
+}
+#addItemButton i {
+    margin-right: 10px;
+}
+
+#generateBomContainer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    background-color: #4a5759;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+#successMessage {
+    color: #004d12;
+    margin-top: 5px auto;
+    display: none;
+    position: center;
+    top: 10px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #00914d;
+    box-sizing: border-box;
+}
+
+#itemDetailsContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#leftDetails,
+#rightDetails {
+    width: calc(48% - 20px);
+    /* Adjusted width and added margin between columns */
+    text-align: left;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    /* Added margin between rows */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+select {
+    margin-top: 5px;
+}
+
+/* Style the placeholder text */
+::placeholder {
+    color: #888;
+}
+
+/* Error message style */
+.error-message {
+    color: #ff0000;
+    font-size: 16px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Icon style */
+.icon {
+    color: #ff0000;
+    margin-right: 5px;
+    display: none;
+}
+header a{
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+   
+}
+p{
+    font-size: 25px;
+}

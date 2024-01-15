@@ -1,0 +1,55 @@
+<h2 class="logo text-center">Stock-to-Ship <i class="fa-solid fa-shop"></i></h2>
+
+<div class="container my-5" style="width: 40rem;">
+    <h1 class="text-center">Sign Up</h1>
+  
+  
+   <form (ngSubmit)="submitForm()" #signupForm="ngForm" class="p-3 bg-light shadow-sm rounded">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.name" class="form-control" [ngClass]="{ 'error-border': errorMessages.name !== '' }" required>
+      <div class="error-message" *ngIf="errorMessages.name !== ''">{{ errorMessages.name }}</div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="username" class="form-label">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="user.username" class="form-control" [ngClass]="{ 'error-border': errorMessages.username !== '' }" required>
+      <div class="error-message" *ngIf="errorMessages.username !== ''">{{ errorMessages.username }}</div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="user.email" class="form-control" [ngClass]="{ 'error-border': errorMessages.email !== '' }" required>
+      <div class="error-message" *ngIf="errorMessages.email !== ''">{{ errorMessages.email }}</div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.password" class="form-control" [ngClass]="{ 'error-border': errorMessages.password !== '' }" required>
+      <div class="error-message" *ngIf="errorMessages.password !== ''">{{ errorMessages.password }}</div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="confirmPassword" class="form-label">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="user.confirmPassword" class="form-control" [ngClass]="{ 'error-border': errorMessages.confirmPassword !== '' }" required>
+      <div class="error-message" *ngIf="errorMessages.confirmPassword !== ''">{{ errorMessages.confirmPassword }}</div>
+    </div>
+  
+    <div class="mb-3">
+      <label for="employeeId" class="form-label">Employee ID:</label>
+      <input type="text" id="employeeId" name="employeeId" [(ngModel)]="user.employeeId" class="form-control">
+    </div>
+  
+      
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </div>
+    <br>
+    <div class="mb-3 text-center">
+      <a routerLink="/login">Already have an account, Login!!</a>
+    </div>
+  </form>
+
+  
+  </div>
+  

@@ -1,0 +1,28 @@
+<app-home></app-home>
+<header>
+    <h1>Warehouse Quality Control System</h1>
+    <h2>Stamping Process</h2>
+  </header>
+  
+  <section>
+    <form *ngIf="!submitted" #qualityControlForm="ngForm" (ngSubmit)="performStamping()">
+      <label for="productCode">Product Code:</label>
+      <input type="text" id="productCode" name="productCode" required [(ngModel)]="productCode">
+  
+      <label for="manufacturingDate">Manufacturing Date:</label>
+      <input type="date" id="manufacturingDate" name="manufacturingDate" required [(ngModel)]="manufacturingDate">
+  
+      <label for="batchNumber">Batch Number:</label>
+      <input type="text" id="batchNumber" name="batchNumber" required [(ngModel)]="batchNumber">
+  
+      <button type="submit">Stamp Product</button>
+    </form>
+  
+    <div id="stampResult"  *ngIf="submitted">
+      <h3>Product Stamped:</h3>
+      <p><strong>Product Code - </strong>{{ productCode }}</p>
+      <p><strong>Manufacturing Date - </strong>{{ manufacturingDate }}</p>
+      <p><strong>Batch Number - </strong>{{ batchNumber }}</p>
+    </div>
+  </section>
+  

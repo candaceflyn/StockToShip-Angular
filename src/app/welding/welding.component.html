@@ -1,0 +1,38 @@
+<app-home></app-home>
+<header>
+    <h1>Warehouse Quality Control - Welding</h1>
+    <h2>Welding Inspection Form</h2>
+  </header>
+  
+  <section>
+    <form *ngIf="!submitted" #weldingInspectionForm="ngForm" (ngSubmit)="performWeldingInspection()">
+      <label for="productCode">Product Code:</label>
+      <input type="text" id="productCode" name="productCode" required [(ngModel)]="productCode">
+  
+      <label for="weldingDate">Welding Date:</label>
+      <input type="date" id="weldingDate" name="weldingDate" required [(ngModel)]="weldingDate">
+  
+      <label for="welderName">Welder Name:</label>
+      <input type="text" id="welderName" name="welderName" required [(ngModel)]="welderName">
+  
+      <label for="weldingType">Welding Type:</label>
+      <select id="weldingType" name="weldingType" required [(ngModel)]="weldingType">
+        <option value="" disabled selected>Select welding type</option>
+        <option value="Arc Welding">Arc Welding</option>
+        <option value="MIG Welding">MIG Welding</option>
+        <option value="TIG Welding">TIG Welding</option>
+      </select>
+  
+      <button type="submit">Submit Inspection</button>
+    </form>
+  
+    <div id="inspectionResults" *ngIf="submitted">
+      <h3>Inspection Results</h3>
+      <p><strong>Product Code:</strong> {{ productCode }}</p>
+      <p><strong>Welding Date:</strong> {{ weldingDate }}</p>
+      <p><strong>Welder Name:</strong> {{ welderName }}</p>
+      <p><strong>Welding Type:</strong> {{ weldingType }}</p>
+      <p><strong>Inspection Status:</strong> Pass</p>
+    </div>
+  </section>
+  

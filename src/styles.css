@@ -1,0 +1,13 @@
+/*@import '~bootstrap/dist/css/bootstrap.min.css';*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #a18e4d, #947445); /* Example gradient colors */
+    min-height: 100vh; /* Ensure the gradient covers the entire viewport height */
+    color: black;
+    background-image: url("/assets/images/Homebg.png");
+    background-size: cover;
+    backdrop-filter: blur(3px);
+  }
+  

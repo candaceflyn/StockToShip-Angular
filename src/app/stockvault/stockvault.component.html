@@ -1,0 +1,56 @@
+<app-home></app-home>
+<header>
+    <h3>Stock Vault</h3>
+    <!--<a routerLink="/home"><i class="fa-solid fa-house"></i></a>-->
+</header>
+<div class="d-flex content main text-center">
+     <div class="p-2 bd-highlight"> <a routerLink="/stockvault/itemcode"><img src="/assets/images/item_code_image.png" class="option-image" alt="Item Code">
+        <h3>Item Code</h3>
+    </a></div>  
+     <div class="p-2 bd-highlight"><a routerLink="/stockvault/inventory-requisition"><img src="/assets/images/inventory_requisition_image2.png" class="option-image" 
+        alt="Inventory Requisition">
+    <h3>Inventory Requisition</h3>
+</a></div>  
+     <div class="p-2 bd-highlight"> <a routerLink="/stockvault/createBOM"><img src="/assets/images/bom_image.png" class="option-image" alt="BOM">
+        <h3>BOM</h3>
+    </a></div>
+     <div class="p-2 bd-highlight">
+        <a routerLink="/stockvault/purchase-requisition"><img src="/assets/images/purchase_requisition_image.png" class="option-image" 
+            alt="Purchase Requisition">
+        <h3>Purchase Requisition</h3>
+    </a>
+     </div>
+    </div>
+
+    <div class="d-flex content main text-center">
+        <div class="p-2 bd-highlight option"> 
+            <div class="dropdown">
+                <a routerLink="/stockvault/purchase-order">
+    
+                <img src="/assets/images/purchase_order_image.png" class="option-image" alt="Purchase Order">
+                <h3>Purchase Order</h3></a>
+                <!--<div class="dropdown-content">
+                    <a routerLink="/stockvault/generatePO">Generate PO</a>
+                    <a routerLink="/stockvault/material-requisition">Material Requisition</a>
+                </div>-->
+            </div>
+       </div>  
+        <div class="p-2 bd-highlight">
+            <a routerLink="/stockvault/stock-watch"><img src="/assets/images/stock_watch_image.png" class="option-image" alt="Stock Watch" height="150" width="200" >
+                <h3>Stock Watch</h3>
+            </a>
+</div>  
+        <div class="p-2 bd-highlight">
+            <a routerLink="/stockvault/payments"><img src="/assets/images/payments_image.png" class="option-image" alt="Payments">
+                <h3>Payments</h3>
+            </a>
+    </div>
+        <div class="p-2 bd-highlight">
+            <a routerLink="/stockvault/performance"><img src="/assets/images/performance_image.png" class="option-image" alt="Performance">
+                <h3>Performance</h3>
+            </a>
+        </div>
+       </div>
+
+    
+<router-outlet></router-outlet>

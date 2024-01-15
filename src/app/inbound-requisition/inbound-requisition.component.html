@@ -1,0 +1,50 @@
+<app-home></app-home>
+<header>
+    <h1>Inbound Requisition Form:</h1>
+    <nav class="navigation">
+      <a routerLink="/home"><i class="fa-solid fa-house"></i></a>
+    </nav>
+  </header>
+  
+  <form (ngSubmit)="submitForm()" #inboundForm="ngForm">
+    <div class="row">
+      <label for="product_name">Product Name:</label>
+      <input class="col" type="text" id="product_name" name="product_name" ngModel required>
+      <br><label for="product_code">Product Code:</label>
+      <input class="col" type="text" id="product_code" name="product_code" ngModel required>
+      <br><label for="Batch_no.">Batch No.:</label>
+      <input class="col" type="text" id="Batch_no" name="Batch_no" ngModel required>
+    </div>
+  
+    <div class="dimen">
+      <br><label for="product_dimensions">Product Dimensions:</label>
+      <input type="number" id="length" name="length" ngModel required>
+      <input type="number" id="breadth" name="breadth" ngModel required>
+      <input type="number" id="height" name="height" ngModel required>
+      </div>
+      <div class="below">
+      <br><label for="product_weight">Product Weight:</label>
+      <input type="number" id="product_weight" name="product_weight" ngModel required>
+      <br><label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" ngModel required>
+    </div>
+  
+    <div class="below">
+    </div>
+  
+    <div class="right">
+      <br><label for="supplier_name">Supplier Name:</label>
+      <input type="text" id="supplier_name" name="supplier_name" ngModel required>
+      <br><label for="supplier_location">Supplier Location:</label>
+      <input type="text" id="supplier_location" name="supplier_location" ngModel required>
+      <br><label for="Purchase_order">Purchase Order:</label>
+      <input type="number" id="Purchase_order" name="Purchase_order" ngModel required>
+      <br><label for="date_of_po">Date of PO Issuance:</label>
+      <input type="date" id="date_of_po" name="date_of_po" ngModel required>
+      <br><label for="date_of_del">Date of Delivery:</label>
+      <input type="date" id="date_of_del" name="date_of_del" ngModel required>
+    </div>
+  
+    <button type="submit" [disabled]="!inboundForm.valid">Confirm</button>
+  </form>
+  

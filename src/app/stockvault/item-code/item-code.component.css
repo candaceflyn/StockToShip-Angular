@@ -1,0 +1,16 @@
+.error-border {
+    border: 2px solid red;
+  }
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  a{
+    color: black;
+  }
+  a:hover{
+    color: rgb(18, 36, 36);
+  }
+  .form-container{
+    width: 400px;
+  }
