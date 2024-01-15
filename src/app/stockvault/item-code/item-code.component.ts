@@ -46,13 +46,13 @@ export class ItemCodeComponent {
       countryOrigin: ''
     };
 
-   // const itemCodeRegex = /^ITM\d{3,4}$/;
+   const itemCodeRegex = /^ITM\d{3,4}$/;
      if (!this.itemType.itemCode.trim()) {
       this.errorMessages.itemCode = 'Please fill this field';
     } 
-    // else if(!itemCodeRegex.test(this.itemType.itemCode.trim())){
-    //   this.errorMessages.itemCode = 'Invalid Item Code\nItem Code should begin with "ITM..."';
-    // }
+    else if(!itemCodeRegex.test(this.itemType.itemCode.trim())){
+      this.errorMessages.itemCode = 'Invalid Item Code\nItem Code should begin with "ITM..."';
+    }
 
     if (!this.itemType.description.trim()) {
       this.errorMessages.description = 'Please fill this field';
