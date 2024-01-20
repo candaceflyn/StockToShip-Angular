@@ -1,3 +1,177 @@
 <app-home></app-home>
 
-<p>location-analyzer works!</p>
+<div class="text-center">
+
+        <h2>Locations Data</h2>
+           <div *ngIf="errorMessage; else locationsData">
+            <p>{{ errorMessage }}</p>
+          </div>
+          
+          <ng-template #locationsData>
+            <!-- <div *ngFor="let location of locations; let i = index">
+                <p><strong>{{ i + 1 }} )</strong> </p>
+                <p><strong>Location Id: </strong> {{ location.locationId }}</p> 
+                <p><strong>Location Descrption: </strong> {{ location.locationDescription }}</p>
+                <p><strong>Status Code: </strong> {{ location.statusCode }}</p>
+                <p><strong>L ✕ H ✕ W : </strong>{{ location.locationLength }} ✕ {{ location.locationHeight }} ✕ {{ location.locationWidth }}</p>
+                <hr>
+              </div>     -->
+              
+              <div class="d-flex justify-content-center">
+                <div class="row justify-content-center">
+                  <div class="col-14">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <!-- <th>#</th> -->
+                          <th>Location Id</th>
+                          <th>Location Description</th>
+                          <th>Status Code</th>
+                          <th>L ✕ H ✕ W</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let location of locations; let i = index">
+                          <!-- <td>{{ i + 1 }}</td> -->
+                          <td>{{ location.locationId }}</td>
+                          <td>{{ location.locationDescription }}</td>
+                          <td>{{ location.statusCode }}</td>
+                          <td>{{ location.locationLength }} ✕ {{ location.locationHeight }} ✕ {{ location.locationWidth }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              
+              
+          </ng-template>
+     </div>
+     <div class="d-flex justify-content-center">
+        <form [formGroup]="locationForm" (ngSubmit)="addLocation()" class="p-3 bg-light shadow-sm rounded mt-5">
+            <h4>Add Location</h4>
+
+            <div class="form-group mb-3">
+                <label for="locationId">Location Id:</label>
+                <input type="number" id="locationId" formControlName="locationId" class="form-control" />
+                <div *ngIf="locationForm.get('locationId')?.hasError('required')" class="error-message">
+                  Please enter a location id.
+                </div>
+                <div *ngIf="locationForm.get('locationId')?.hasError('locationIdTaken')" class="error-message">
+                  Location id is not available.
+                </div>
+              </div>
+              
+            <div class="form-group">
+                <label for="locationDescription">Location Description:</label>
+                <input type="text" id="locationDescription" formControlName="locationDescription"
+                    class="form-control" />
+                <div *ngIf="locationForm.get('locationDescription')?.hasError('required')" class="error-message">
+                    Please enter a location description.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="statusCode">Status Code:</label>
+                <input type="number" id="statusCode" formControlName="statusCode" class="form-control" />
+                <div *ngIf="locationForm.get('statusCode')?.hasError('required')" class="error-message">
+                  Please enter a status code.
+                </div>
+                <div *ngIf="locationForm.get('statusCode')?.hasError('invalidStatusCode')" class="error-message">
+                  Please enter a valid status code (0 or 1).
+                </div>
+              </div>
+              
+
+            <div class="form-group">
+                <label for="locationLength">Location Length:</label>
+                <input type="number" id="locationLength" formControlName="locationLength" class="form-control" />
+                <div *ngIf="locationForm.get('locationLength')?.hasError('required')" class="error-message">
+                    Please enter a location length.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="locationWidth">Location Width:</label>
+                <input type="number" id="locationWidth" formControlName="locationWidth" class="form-control" />
+                <div *ngIf="locationForm.get('locationWidth')?.hasError('required')" class="error-message">
+                    Please enter a location width.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="locationHeight">Location Height:</label>
+                <input type="number" id="locationHeight" formControlName="locationHeight" class="form-control" />
+                <div *ngIf="locationForm.get('locationHeight')?.hasError('required')" class="error-message">
+                    Please enter a location height.
+                </div>
+            </div>
+
+            <div class="text-center  mt-3">
+            <button type="submit" [disabled]="!locationForm.valid" class="btn btn-primary">Add Location</button>
+            </div>
+        </form>
+
+</div>
+<div class="d-flex justify-content-center">
+  <form [formGroup]="updateLocationForm" (ngSubmit)="updateLocation()" class="p-3 bg-light shadow-sm rounded mt-5">
+    <h4>Update Location</h4>
+  
+    <div class="form-group mb-3">
+      <label for="updateLocationId">Location Id:</label>
+      <input type="number" id="updateLocationId" formControlName="locationId" class="form-control" />
+      <div *ngIf="updateLocationForm.get('locationId')?.hasError('required')" class="error-message">
+        Please enter a location id.
+      </div>
+      <div *ngIf="updateLocationForm.get('locationId')?.hasError('locationIdNotTaken') && updateLocationForm.get('locationId')?.touched" class="error-message">
+        Location id does not exist.
+      </div>           
+    </div>
+  
+    <div class="form-group">
+      <label for="updateLocationDescription">Location Description:</label>
+      <input type="text" id="updateLocationDescription" formControlName="locationDescription" class="form-control" />
+      <div *ngIf="updateLocationForm.get('locationDescription')?.hasError('required')" class="error-message">
+        Please enter a location description.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="updateStatusCode">Status Code:</label>
+      <input type="number" id="updateStatusCode" formControlName="statusCode" class="form-control" />
+      <div *ngIf="updateLocationForm.get('statusCode')?.hasError('required')" class="error-message">
+        Please enter a status code.
+      </div>
+      <div *ngIf="updateLocationForm.get('statusCode')?.hasError('invalidStatusCode')" class="error-message">
+        Please enter a valid status code (0 or 1).
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="updateLocationLength">Location Length:</label>
+      <input type="number" id="updateLocationLength" formControlName="locationLength" class="form-control" />
+      <div *ngIf="updateLocationForm.get('locationLength')?.hasError('required')" class="error-message">
+        Please enter a location length.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="updateLocationWidth">Location Width:</label>
+      <input type="number" id="updateLocationWidth" formControlName="locationWidth" class="form-control" />
+      <div *ngIf="updateLocationForm.get('locationWidth')?.hasError('required')" class="error-message">
+        Please enter a location width.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="updateLocationHeight">Location Height:</label>
+      <input type="number" id="updateLocationHeight" formControlName="locationHeight" class="form-control" />
+      <div *ngIf="updateLocationForm.get('locationHeight')?.hasError('required')" class="error-message">
+        Please enter a location height.
+      </div>
+    </div>
+  
+    <div class="text-center mt-3">
+      <button type="submit" [disabled]="!updateLocationForm.valid" class="btn btn-primary">Update Location</button>
+    </div>
+  </form>
+  
+</div>

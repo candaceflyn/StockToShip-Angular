@@ -14,7 +14,6 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ShippingComponent } from './shipping/shipping.component';
-import { ContactComponent } from './contact/contact.component';
 import { WareyougoComponent } from './wareyougo/wareyougo.component';
 import { CarodriveComponent } from './carodrive/carodrive.component';
 import { StockvaultComponent } from './stockvault/stockvault.component';
@@ -28,9 +27,13 @@ import { PaintingComponent } from './painting/painting.component';
 import { AssemblingComponent } from './assembling/assembling.component';
 import { StockvaultModule } from './stockvault/stockvault.module';
 import { StockToShipComponent } from './stock-to-ship/stock-to-ship.component';
-import { NavLoginComponent } from './nav-login/nav-login.component';
 import { FrontPageComponent } from './front-page/front-page.component';
-import { MyAccountComponent } from './my-account/my-account.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { TandcComponent } from './tandc/tandc.component';
+import { InboundProductComponent } from './inbound-product/inbound-product.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -42,6 +45,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
 //   { path: 'stockvault', loadChildren: () => import('./stockvault/stockvault.module').then(m => m.StockvaultModule) },
 
 // ];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +56,6 @@ import { MyAccountComponent } from './my-account/my-account.component';
     ProductsComponent,
     OrdersComponent,
     ShippingComponent,
-    ContactComponent,
     WareyougoComponent,
     CarodriveComponent,
     StockvaultComponent,
@@ -65,9 +68,13 @@ import { MyAccountComponent } from './my-account/my-account.component';
     PaintingComponent,
     AssemblingComponent,
     StockToShipComponent,
-    NavLoginComponent,
     FrontPageComponent,
-    MyAccountComponent,
+    AboutUsComponent,
+    ContactUsComponent,
+    TandcComponent,
+    InboundProductComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     HttpClientModule,

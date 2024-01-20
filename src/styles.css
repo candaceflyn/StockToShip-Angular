@@ -9,5 +9,6 @@ body {
     background-image: url("/assets/images/Homebg.png");
     background-size: cover;
     backdrop-filter: blur(3px);
+    font-family: "Poppins";
   }
   

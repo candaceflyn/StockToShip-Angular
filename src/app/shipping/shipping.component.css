@@ -5,3 +5,43 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+a{
+    color:black;
+}
+a:hover{
+    color:rgb(19, 63, 99);
+}
+
+h1 {
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.status-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    margin:10px;
+    margin-left: 350px;
+    margin-right: 200px;
+}
+
+.status {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 16px;
+    margin: 10px 0;
+}

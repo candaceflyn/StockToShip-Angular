@@ -1,2 +1,39 @@
 <app-home></app-home>
-<p>outbound-requisition works!</p>
+
+<div class="container my-5 text-center" style="width: 40rem">
+    <h1 class="text-center">Outbound Requisition Form</h1>
+    <form (ngSubmit)="submitForm()" #outboundForm="ngForm" class="p-3 shadow-sm rounded">
+        <div class="row mb-3">
+            <div class="col">
+                <label for="product_name">Product Name</label>
+                <input type="text" id="product_name" name="product_name" ngModel required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="product_code">Product Code</label>
+                <input type="text" id="product_code" name="product_code" ngModel required>
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <div class="col">
+                <label for="delivery_department">Delivery Department:</label>
+                <input type="text" id="delivery_department" name="delivery_department" ngModel required>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col">
+                <label for="department_incharge">Department In-charge:</label>
+                <input type="text" id="department_incharge" name="department_incharge" ngModel required>
+               </div>
+        </div>
+       
+
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit" [disabled]="!outboundForm.valid">Add product to cart</button>
+        </div>
+    </form>
+</div>

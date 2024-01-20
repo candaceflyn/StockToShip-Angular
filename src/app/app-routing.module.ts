@@ -7,7 +7,7 @@ import { InboundRequisitionComponent } from './inbound-requisition/inbound-requi
 import { LocationAnalyzerComponent } from './location-analyzer/location-analyzer.component';
 import { OutboundRequisitionComponent } from './outbound-requisition/outbound-requisition.component';
 import { ShippingComponent } from './shipping/shipping.component';
-import { StampingComponent } from './stamping/stamping.component'; // Import your components
+import { StampingComponent } from './stamping/stamping.component'; 
 import { BlankingComponent } from './blanking/blanking.component';
 import { WeldingComponent } from './welding/welding.component';
 import { PaintingComponent } from './painting/painting.component';
@@ -20,8 +20,12 @@ import { FrontPageComponent } from './front-page/front-page.component';
 
 import { ProductsComponent } from './products/products.component';
 import { OrdersComponent } from './orders/orders.component';
-import { ContactComponent } from './contact/contact.component';
-import { MyAccountComponent } from './my-account/my-account.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { TandcComponent } from './tandc/tandc.component';
+import { InboundProductComponent } from './inbound-product/inbound-product.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,7 +34,6 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'shipping', component: ShippingComponent },
-  { path: 'contact', component: ContactComponent },
   { path: 'wareyougo', component: WareyougoComponent },
   { path: 'inbound-requisition', component: InboundRequisitionComponent },
   { path: 'location-analyzer', component: LocationAnalyzerComponent },
@@ -42,14 +45,19 @@ const routes: Routes = [
   { path: 'welding', component: WeldingComponent },
   { path: 'painting', component: PaintingComponent },
   { path: 'assembling', component: AssemblingComponent },
-
   { path: 'stockvault', component: StockvaultComponent },
   { path: 'stockvault', loadChildren: () => import('./stockvault/stockvault.module').then(m => m.StockvaultModule) },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent }, 
-  { path: 'front-page', component: FrontPageComponent }, 
-  { path: 'my-account', component: MyAccountComponent }, 
+  { path: 'front-page', component: FrontPageComponent },
+  { path: 'about-us', component: AboutUsComponent}, 
+  { path: 'contact-us', component: ContactUsComponent}, 
+  { path: 'tandc', component: TandcComponent}, 
+  { path: 'inbound-product', component: InboundProductComponent}, 
+  { path: 'forgot-password', component: ForgotPasswordComponent}, 
+  { path: 'reset-password', component: ResetPasswordComponent}, 
+
 ];
 
 @NgModule({

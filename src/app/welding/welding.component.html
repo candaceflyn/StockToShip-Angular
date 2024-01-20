@@ -15,13 +15,16 @@
       <label for="welderName">Welder Name:</label>
       <input type="text" id="welderName" name="welderName" required [(ngModel)]="welderName">
   
-      <label for="weldingType">Welding Type:</label>
+      <!-- <label for="weldingType">Welding Type:</label>
       <select id="weldingType" name="weldingType" required [(ngModel)]="weldingType">
         <option value="" disabled selected>Select welding type</option>
         <option value="Arc Welding">Arc Welding</option>
         <option value="MIG Welding">MIG Welding</option>
         <option value="TIG Welding">TIG Welding</option>
-      </select>
+      </select> -->
+      <label for="weldingType">Welding Type:</label>
+      <input type="text" id="weldingType" name="weldingType" required [(ngModel)]="weldingType">
+        
   
       <button type="submit">Submit Inspection</button>
     </form>

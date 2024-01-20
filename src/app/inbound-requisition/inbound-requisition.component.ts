@@ -11,14 +11,13 @@ export class InboundRequisitionComponent {
 
   submitForm() {
     if (this.validateForm()) {
-      this.router.navigate(['/location-analyzer']);
+      alert('Your form has been submitted');
+      this.router.navigate(['/front-page']);
     } else {
       alert('Please fill in all fields.');
     }
   }
-
   validateForm(): boolean {
-   
     return true;
   }
 }

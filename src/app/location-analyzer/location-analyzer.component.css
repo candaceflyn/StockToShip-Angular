@@ -5,3 +5,14 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.error-message{
+    color: rgb(129, 20, 20);
+}
+h2, h4{
+    text-decoration:underline;
+}
+form{
+    width: 40rem;
+    background: linear-gradient(to bottom right, #248883, #155158);
+  color: #fff;
+  }

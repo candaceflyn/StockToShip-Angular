@@ -13,146 +13,67 @@
     <div id="navbar">
         <h2>Create BOM</h2>
         <button type="button" id="addItemButton" onclick="addItemToBOM()">
-            <i class="fa-regular fa-square-plus fa-xl"></i> Add more items to BOM
+            <i class="fa-regular fa-square-plus fa-xl"></i>  Add more items to BOM
         </button>
     </div>
-    <form>
+    <form (ngSubmit)="submitForm()" #bomForm="ngForm">
         <p>Enter the following details to generate BOM</p>
 
         <div class="row">
             <div class="col">
                 <label for="uniqueItemCode">Unique Item code</label>
-                <input type="text" id="uniqueItemCode" placeholder="Enter Unique Item code" required>
-                <span class="error-message" id="uniqueItemCodeError"></span>
+                <input type="text" id="uniqueItemCode" name="uniqueItemCode" placeholder="Enter Unique Item code" ngModel required>
             </div>
             <div class="col">
                 <label for="unitsOfMeasure">Units of Measure</label>
-                <select id="unitsOfMeasure" required>
+                <select id="unitsOfMeasure" name="unitsOfMeasure" ngModel required>
                     <option value="mm">Meter (m)</option>
                     <option value="km">Kilometer (km)</option>
                     <option value="cm">Centimeter (cm)</option>
                     <option value="mm">Millimeter (mm)</option>
                 </select>
-                <span class="error-message" id="unitsOfMeasureError"></span>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
                 <label for="description">Description</label>
-                <input type="text" id="description" placeholder="Enter Description" required>
+                <input type="text" id="description" name="description" placeholder="Enter Description" ngModel required>
                 <span class="error-message" id="descriptionError"></span>
             </div>
             <div class="col">
                 <label for="manufacturer">Manufacturer</label>
-                <input type="text" id="manufacturer" placeholder="Enter Manufacturer" required>
-                <span class="error-message" id="manufacturerError"></span>
+                <input type="text" id="manufacturer" name="manufacturer" placeholder="Enter Manufacturer" ngModel required>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
                 <label for="quantity">Quantity</label>
-                <input type="text" id="quantity" placeholder="Enter Quantity" required>
-                <span class="error-message" id="quantityError"></span>
+                <input type="text" id="quantity" name="quantity" placeholder="Enter Quantity" ngModel required>
             </div>
             <div class="col">
                 <label for="supplierCode">Supplier Code</label>
                 <input type="text" id="supplierCode" placeholder="Enter Supplier Code" required>
-                <span class="error-message" id="supplierCodeError"></span>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="dimensions">Dimensions</label>
-                <input type="text" id="dimensions" placeholder="Enter Dimensions" required>
-                <span class="error-message" id="dimensionsError"></span>
+                <input type="text" id="dimensions" name="dimensions" placeholder="Enter Dimensions" ngModel required>
             </div>
             <div class="col">
                 <label for="subAssembly">Sub Assembly</label>
-                <input type="text" id="subAssembly" placeholder="Enter Sub Assembly" required>
-                <span class="error-message" id="subAssemblyError"></span>
+                <input type="text" id="subAssembly" name="subAssembly" placeholder="Enter Sub Assembly" ngModel required>
             </div>
         </div>
         <div id="generateBomContainer">
             <label for="notesComments">Notes/Comments</label>
-            <input type="text" id="notesComments" placeholder="Enter Notes/Comments" required>
-            <span class="error-message" id="notesCommentsError"></span>
+            <input type="text" id="notesComments" name="notesComments" placeholder="Enter Notes/Comments" ngModel required>
             <br><br>
-            <button type="button" onclick="saveItemCode()">Generate BOM</button>
-            <h3>
-                <div id="successMessage"></div>
-            </h3>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit" [disabled]="!bomForm.valid">Generate Bom</button>
+            </div>
         </div>
     </form>
 </div>
-<script>
-    function saveItemCode() {
-        // Validate the form
-        var isValid = validateForm();
-
-        // Display success message if valid
-        if (isValid) {
-            document.getElementById("successMessage").innerHTML = "Item code added to BOM successfully.";
-            document.getElementById("successMessage").style.display = "block";
-        } else {
-            document.getElementById("successMessage").style.display = "none";
-        }
-    }
-
-    function addItemToBOM() {
-        //window.location.href = "addItemsToBOM.html";
-    }
-
-    function validateForm() {
-        // Reset error messages
-        resetErrorMessages();
-
-        // Flag to track form validity
-        var isValid = true;
-
-        // Validate each input field
-        isValid = validateField("uniqueItemCode", "uniqueItemCodeError") && isValid;
-        isValid = validateField("description", "descriptionError") && isValid;
-        isValid = validateField("quantity", "quantityError") && isValid;
-        isValid = validateField("dimensions", "dimensionsError") && isValid;
-        isValid = validateField("unitsOfMeasure", "unitsOfMeasureError") && isValid;
-        isValid = validateField("manufacturer", "manufacturerError") && isValid;
-        isValid = validateField("supplierCode", "supplierCodeError") && isValid;
-        isValid = validateField("subAssembly", "subAssemblyError") && isValid;
-        isValid = validateField("notesComments", "notesCommentsError") && isValid;
-
-        // Validate Unique Item Code with regex
-        var uniqueItemCode = document.getElementById("uniqueItemCode").value;
-        var regex = /^ITC/;
-        if (!regex.test(uniqueItemCode)) {
-            document.getElementById("uniqueItemCodeError").innerHTML = "Invalid Unique Item Code. It should start with 'ITC'.";
-            document.getElementById("uniqueItemCodeError").style.display = "block";
-            isValid = false;
-        }
-
-        return isValid;
-    }
-
-    function validateField(fieldId, errorId) {
-        var field = document.getElementById(fieldId);
-        var errorMessage = document.getElementById(errorId);
-
-        // Check if the field is empty
-        if (field.value.trim() === "") {
-            errorMessage.innerHTML = "Please fill out this field.";
-            errorMessage.style.display = "block";
-            return false;
-        }
-
-        return true;
-    }
-
-    function resetErrorMessages() {
-        var errorMessages = document.getElementsByClassName("error-message");
-        for (var i = 0; i < errorMessages.length; i++) {
-            errorMessages[i].innerHTML = "";
-            errorMessages[i].style.display = "none";
-        }
-    }
-</script>

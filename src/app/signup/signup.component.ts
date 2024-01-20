@@ -80,7 +80,6 @@ export class SignupComponent {
     // }
 
 
-    // Check if any error messages exist
     const hasErrors = Object.values(this.errorMessages).some(message => message !== '');
 
     if (!hasErrors) {
@@ -91,7 +90,6 @@ export class SignupComponent {
             // Username is available, proceed with registration
             this.registerUser();
           } else {
-            // Username is not available, display error message
             this.errorMessages.username = 'Username not available';
           }
         },
@@ -104,7 +102,6 @@ export class SignupComponent {
   }
 
 
-  // Add a new method to handle user registration
   registerUser() {
     // Make HTTP request to save user data
     this.userService.saveUser(this.user).subscribe(
@@ -112,9 +109,6 @@ export class SignupComponent {
         // Check the response from the backend
         if (response.success) {
           // Registration successful
-           // Save user data in local storage
-        localStorage.setItem('userData', JSON.stringify(this.user));
-
           alert('Registration successful!! 😄');
           this.router.navigate(['/home']);
         } else {
@@ -123,7 +117,6 @@ export class SignupComponent {
         }
       },
       error => {
-        // Handle error
         console.error('An error occurred while registering the user:', error);
       }
     );

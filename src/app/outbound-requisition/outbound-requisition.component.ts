@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-outbound-requisition',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class OutboundRequisitionComponent {
 
+  constructor(private router: Router) {}
+
+  submitForm() {
+    if (this.validateForm()) {
+      alert('Product has been added to cart!');
+      this.router.navigate(['/front-page']);
+    } else {
+      alert('Please fill in all fields.');
+    }
+  }
+  validateForm(): boolean {
+   
+    return true;
+  }
 }

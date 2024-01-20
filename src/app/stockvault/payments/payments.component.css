@@ -5,6 +5,7 @@ body {
     background-size: cover;
     background-position: center;
 }
+
         .header-right{
             position: absolute;
             right: 1em;
@@ -55,4 +56,10 @@ body {
             width: 500px;
             height: 500px;
             z-index: -1;
+        }
+        a{
+            color:black;
+        }
+        a:hover{
+            color:rgb(19, 63, 99);
         }

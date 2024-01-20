@@ -1,14 +1,38 @@
 <app-home></app-home>
 
+<div class="text-center">
 <div>
-    <h2>Orders</h2>
-    <form>
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="Enter email" name="email">
-          </div>
-          <div class="col">
-            <input type="password" class="form-control" placeholder="Enter password" name="pswd">
-          </div>
-        </div>
-      </form></div>
+  <h2>Purchase Orders</h2>
+  <div *ngIf="errorMessage; else ordersData">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <ng-template #ordersData>
+    <div *ngIf="purchaseOrders.length === 0">
+      <p>No data to display.</p>
+    </div>
+    <div *ngIf="purchaseOrders.length > 0">
+      <div class="d-flex justify-content-center">
+        <div class="row justify-content-center">
+          <div class="col-14">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+            <th>Order Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of purchaseOrders; let i = index">
+              <td>{{ i + 1 }}</td>
+            <td>{{ order.purchaseOrderNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+</div>

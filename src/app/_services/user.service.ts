@@ -51,40 +51,34 @@ export class UserService {
       })
     );
   }
-  updateUser(username: string, updatedUser: any): Observable<any> {
-    const url = `${this.baseUrl}/users/${username}`;
+ 
+  validateUser(username: string, email: string): Observable<any> {
+    const url = `${this.baseUrl}/validate-user`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http.put(url, updatedUser, { headers }).pipe(
+  
+    const body = {
+      username: username,
+      email: email
+    };
+  
+    return this.http.post(url, body, { headers }).pipe(
       catchError(error => {
-        console.error('An error occurred while updating user:', error);
+        console.error('An error occurred while validating credentials:', error);
         return throwError(error);
       })
     );
   }
-  // getUserDetails(username: string): Observable<any> {
-  //   const url = `${this.baseUrl}/users/${username}`;
-  //   const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  updatePassword(username: string, password: string): Observable<any> {
+    const url = `${this.baseUrl}/update-password`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-  //   return this.http.get(url, { headers }).pipe(
-  //     catchError(error => {
-  //       console.error('An error occurred while fetching user details:', error);
-  //       return throwError(error);
-  //     })
-  //   );
-  // }
-  
-  // getUserDetails(username: string): Observable<UserDetailsDTO> {
-  //   const url = `${this.baseUrl}/userDetails/${username}`;
-  //   return this.http.get<UserDetailsDTO>(url);
-  // }
-  getUserDetails(username: string): Observable<UserDetailsDTO> {
-    console.log('Fetching user details for username:', username);
-  
-    const url = `${this.baseUrl}/userDetails/${username}`;
-    return this.http.get<UserDetailsDTO>(url);
+    const body = {
+      username: username,
+      password: password
+    };
+
+    return this.http.post(url, body, { headers });
   }
-  
 
 }
 
