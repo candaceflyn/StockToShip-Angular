@@ -26,6 +26,7 @@ import { TandcComponent } from './tandc/tandc.component';
 import { InboundProductComponent } from './inbound-product/inbound-product.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -57,6 +58,7 @@ const routes: Routes = [
   { path: 'inbound-product', component: InboundProductComponent}, 
   { path: 'forgot-password', component: ForgotPasswordComponent}, 
   { path: 'reset-password', component: ResetPasswordComponent}, 
+  { path: '**', component: NotFoundComponent}, 
 
 ];
 

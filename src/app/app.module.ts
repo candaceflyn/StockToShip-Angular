@@ -34,6 +34,7 @@ import { TandcComponent } from './tandc/tandc.component';
 import { InboundProductComponent } from './inbound-product/inbound-product.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -75,6 +76,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     InboundProductComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+    NotFoundComponent,
   ],
   imports: [
     HttpClientModule,
